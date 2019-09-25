@@ -11,9 +11,13 @@ $action = $_POST['action'];
 
 if ($action == 'mailer')
 {
-    $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL;
-    $message .= 'Email : ' . $email . PHP_EOL;
-    $message .= 'Mot de passe : ' . PHP_EOL . $motdepasse;
+    $message = 'Voici vos identifiants d\'inscription : ' . PHP_EOL . $identifiant . '<br/>';
+    echo $message;
+    $message = 'Email : ' . PHP_EOL . $email . '<br/>';
+    echo $message;
+    $message = 'Mot de passe : ' . PHP_EOL . $motdepasse;
+    echo $message;
+    mail($email, 'test', $message);
 }
 else
 {
