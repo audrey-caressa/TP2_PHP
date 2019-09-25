@@ -10,10 +10,14 @@ function start_page($title)
                 <body> <hr/><br/><strong>Test</strong><br/><hr/> '; //end of line
 }
 
+start_page('title');
+
 function end_page()
 {
     echo '</body></html>';
 }
+
+end_page();
 
 // Correspond à l’adresse IP de celui qui visualise la page.
 echo getenv('REMOTE_ADDR');
@@ -21,6 +25,6 @@ echo getenv('REMOTE_ADDR');
 echo getenv('HTTP_HOST');
 // Correspond au logiciel serveur Web utilisé.
 echo getenv('SERVER_SOFTWARE');
-phpinfo();
+//phpinfo();
 
 ?>
