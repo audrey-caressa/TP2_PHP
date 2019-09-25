@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="917bb5fa-0ea0-4ccf-ae3c-6bf7cc186983" name="localhost" url="http://audreycaressa.alwaysdata.net">
+        <fileTransfer host="sftp://ssh-audreycaressa.alwaysdata.net" port="22" rootFolder="/home/audreycaressa" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

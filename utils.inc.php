@@ -21,6 +21,6 @@ echo getenv('REMOTE_ADDR');
 echo getenv('HTTP_HOST');
 // Correspond au logiciel serveur Web utilisé.
 echo getenv('SERVER_SOFTWARE');
-
+phpinfo();
 
 ?>
