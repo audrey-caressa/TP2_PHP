@@ -16,6 +16,7 @@ function start_page($title)
                 </head>
                 <body>
                  <hr/><br/><strong>Welcome</strong><br/><hr/>
+                 <form action="data-processing.php" method="post">
                  <p> Identifiant </p>
                  <input type="text" name="identifiant" value="Votre identifiant"/>
                  <p> Civilité (sexe) </p>
@@ -23,7 +24,7 @@ function start_page($title)
                  <br><input type="radio" name="sexe" value="Femme"/> Femme <br/>
                  <br><input type="radio" name="sexe" value="Autre"/> Ne se prononce pas <br/>
                  <p> Email </p>
-                 <input type="text" value="Votre email"/>
+                 <input type="text" name="email" value="Votre email"/>
                  <p> Mot de Passe </p>
                  <input type="password" name="motdepasse" value="Votre mot de passe"/>
                  <p> Confirmation Mot de Passe </p>
@@ -40,8 +41,7 @@ function start_page($title)
                  <select/>
                  <p> Conditions générales </p>
                  <input type="checkbox" name="conditionsgenerales"/>
-                 <form action="data-processing.php" method="post">
-                 <input type="submit" name="action" value="Mailler"/>
+                 <input type="submit" name="action" value="mailer"/>
                  <form/>
                  '; //end of line
 }
