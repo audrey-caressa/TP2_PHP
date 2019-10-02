@@ -1,12 +1,22 @@
 <?php
 
+//fonction utile : var_dump()
+
 //ouverture connexion serveur base de données
-$dbLink = mysqli_connect(mysql-audreycaressa.alwaysdata.net, '189839', '1234')
+$dbLink = mysqli_connect('mysql-audreycaressa.alwaysdata.net', '189839', 'drey15000')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 
 //sélection base de données
-mysqli_select_db($dbLink , user)
-or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
+mysqli_select_db($dbLink , 'audreycaressa_php')
+or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+if (isset($_POST['identifiant']))
+{
+    $identifiant=$_POST['identifiant'];
+}
+else{
+    $identifiant=" ";
+}
 
 if (isset($_POST['sexe']))
 {
@@ -32,12 +42,12 @@ else{
     $motdepasse=" ";
 }
 
-if (isset($_POST['téléphone']))
+if (isset($_POST['telephone']))
 {
-    $téléphone=$_POST['téléphone'];
+    $telephone=$_POST['telephone'];
 }
 else{
-    $téléphone=" ";
+    $telephone=" ";
 }
 
 if (isset($_POST['pays']))
@@ -48,14 +58,6 @@ else{
     $pays=" ";
 }
 
-if (isset($_POST['conditionsgenerales']))
-{
-    $conditionsgenerales=$_POST['conditionsgenerales'];
-}
-else{
-    $conditionsgenerales=" ";
-}
-
 if (isset($_POST['today']))
 {
     $today=$_POST['today'];
@@ -64,26 +66,42 @@ else{
     $today=" ";
 }
 
-$query = 'INSERT INTO user (date, email ..) VALUES (\'' . $today . '\', \''
-    . $email . '\', ' . ... . ')';
-
-//$identifiant = $_POST['identifiant'];
+$identifiant = $_POST['identifiant'];
 $sexe = $_POST['sexe'];
 $email = $_POST['email'];
 $motdepasse = $_POST['motdepasse'];
-$téléphone = $_POST['téléphone'];
+$telephone = $_POST['telephone'];
 $pays = $_POST['pays'];
-$conditionsgenerales = $_POST['conditionsgenerales'];
 $today = date('Y-m-d');
 $action = $_POST['action'];
 
+$query='INSERT INTO user(civilite, email, motdepasse, telephone, pays, today)VALUES(';
+$query.='"'.$sexe.'",';
+$query.='"'.$email.'",';
+$query.='"'.$motdepasse.'",';
+$query.='"'.$telephone.'",';
+$query.='"'.$pays.'",';
+$query.='"'.$today.'")';
+
+if(!($dbResult = mysqli_query($dbLink, $query)))
+{
+    echo 'Erreur de requête<br/>';
+// Affiche le type d'erreur.
+    echo 'Erreur : ' . mysqli_error($dbLink) . '<br/><br/>';
+// Affiche la requête envoyée.
+    echo 'Requête : ' . $query . '<br/>';
+    exit();
+}
+else
+{
+    echo 'Votre inscrition a bien été enregistrée !' . '<br/>';
+}
+
 if ($action == 'mailer')
 {
-    //$message = 'Voici vos identifiants d\'inscription : ' . PHP_EOL . $identifiant . '<br/>';
-    //echo $message;
-    $message = 'Email : ' . PHP_EOL . $email . '<br/>';
+    $message = 'Votre email : ' . PHP_EOL . $email . '<br/>';
     echo $message;
-    $message = 'Mot de passe : ' . PHP_EOL . $motdepasse;
+    $message = 'Votre mot de passe : ' . PHP_EOL . $motdepasse;
     echo $message;
     mail($email, 'test', $message);
 }

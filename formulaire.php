@@ -1,7 +1,5 @@
 <?php
 
-include("data-processing.php");
-
 // Correspond à l’adresse IP de celui qui visualise la page.
 echo getenv('REMOTE_ADDR');
 // Correspond à l’adresse IP du serveur.
@@ -22,7 +20,7 @@ function start_page($title)
                  <hr/><br/><strong>Welcome</strong><br/><hr/>
                  <form action="data-processing.php" method="post">
                  <p> Identifiant </p>
-                 <input type="text" name="identifiant" value="HELLO"/>
+                 <input type="text" name="identifiant" value="1212"/>
                  <p> Civilité (sexe) </p>
                  <br><input type="radio" name="sexe" value="Homme"/> Homme <br/>
                  <br><input type="radio" name="sexe" value="Femme"/> Femme <br/>
@@ -34,9 +32,9 @@ function start_page($title)
                  <p> Confirmation Mot de Passe </p>
                  <input type="password" name="motdepasse" value="motdepasse"/>
                  <p> Téléphone </p>
-                 <input type="text" name="téléphone" value="0606060606"/>
+                 <input type="text" name="telephone" value="454545"/>
                  <p> Pays </p>
-                 <select>
+                 <select name="pays">
                     <option value="" name="pays"> Sélectionner le pays <option/>
                     <option value="france" name="pays"> France <option/>
                     <option value="allemagne" name="pays"> Allemagne <option/>
