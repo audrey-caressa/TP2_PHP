@@ -11,7 +11,7 @@ or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
     //requêtes
 $query = 'SELECT id, email, date FROM user';
 
-//envoi requêtes à la base de donnée
+//envoi requêtes à la base de données
 
 if(!($dbResult = mysqli_query($dbLink, $query)))
 {
