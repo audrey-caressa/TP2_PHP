@@ -9,7 +9,7 @@ mysqli_select_db($dbLink , 'audreycaressa_php')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
     //requêtes
-$query = 'SELECT identifiant, email FROM user';
+$query = 'SELECT identifiant,login,password FROM user';
 
 //envoi requêtes à la base de données
 
@@ -27,7 +27,7 @@ if(!($dbResult = mysqli_query($dbLink, $query)))
 while ($dbRow = mysqli_fetch_assoc($dbResult)) //on récupère les résultats de la requête
 {
     echo $dbRow['identifiant'] . '<br/>';
-    echo $dbRow['email'] . '<br/>';
-    echo $dbRow['date'] . '<br/>';
+    echo $dbRow['login'] . '<br/>';
+    echo $dbRow['password'] . '<br/>';
     echo '<br/><br/>';
 }

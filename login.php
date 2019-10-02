@@ -16,10 +16,12 @@ function formul_login()
                  <input type="password" name="password" value="password"/>
                  <p> Confirmation Mot de Passe </p>
                  <input type="password" name="password" value="password"/>
+                 <p></p>
                  <input type="submit" name="action" value="ok"/>
                  ';
 }
 
 formul_login();
+end_page();
 
 ?>
