@@ -22,6 +22,5 @@ function formul_login()
 }
 
 formul_login();
-end_page();
 
 ?>

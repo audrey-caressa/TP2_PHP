@@ -27,9 +27,7 @@ else{
 $login = $_POST['login'];
 $password = $_POST['password'];
 
-$query='INSERT INTO user(login, password)VALUES(';
-$query.='"'.$login.'",';
-$query.='"'.$password.'")';
+$query= "SELECT identifiant FROM user WHERE identifiant='$login' AND motdepasse='$password'";
 
 if (isset($_POST['login']) && isset($_POST['password']))
 {
@@ -37,8 +35,7 @@ if (isset($_POST['login']) && isset($_POST['password']))
 }
 else
 {
-    start_page('erreur') ;
-    ...
+    start_page('erreur');
 }
 
 if(!($dbResult = mysqli_query($dbLink, $query)))
