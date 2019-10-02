@@ -56,12 +56,12 @@ else{
     $conditionsgenerales=" ";
 }
 
-if (isset($_POST['date']))
+if (isset($_POST['today']))
 {
-    $date=$_POST['date'];
+    $today=$_POST['today'];
 }
 else{
-    $date=" ";
+    $today=" ";
 }
 
 $query = 'INSERT INTO user (date, email ..) VALUES (\'' . $today . '\', \''

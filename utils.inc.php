@@ -1,6 +1,6 @@
 <?php
 
-require("data-processing.php");
+include("data-processing.php");
 
 // Correspond à l’adresse IP de celui qui visualise la page.
 echo getenv('REMOTE_ADDR');
