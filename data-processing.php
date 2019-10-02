@@ -1,6 +1,6 @@
 <?php
 
-$identifiant = $_POST['identifiant'];
+//$identifiant = $_POST['identifiant'];
 $sexe = $_POST['sexe'];
 $email = $_POST['email'];
 $motdepasse = $_POST['motdepasse'];

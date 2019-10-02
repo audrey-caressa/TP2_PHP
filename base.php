@@ -8,10 +8,10 @@ or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , dbBd)
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
 
-    requêtes
+    //requêtes
 $query = 'SELECT id, email, date FROM user';
 
-envoi requêtes à la base de donnée
+//envoi requêtes à la base de donnée
 
 if(!($dbResult = mysqli_query($dbLink, $query)))
 {
