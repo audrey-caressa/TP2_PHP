@@ -1,11 +1,11 @@
 <?php
 
 //ouverture connexion serveur base de données
-$dbLink = mysqli_connect(dbHost, dbLogin, dbPass)
+$dbLink = mysqli_connect(mysql-audreycaressa.alwaysdata.net, '189839', '1234')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 
 //sélection base de données
-mysqli_select_db($dbLink , dbBd)
+mysqli_select_db($dbLink , user)
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
 
     //requêtes
@@ -25,7 +25,7 @@ if(!($dbResult = mysqli_query($dbLink, $query)))
 
 
 while ($dbRow = mysqli_fetch_assoc($dbResult)) //on récupère les résultats de la requête {
-    echo $dbRow['id'] . '<br/>';
+    echo $dbRow['identifiant'] . '<br/>';
     echo $dbRow['email'] . '<br/>';
     echo $dbRow['date'] . '<br/>';
     echo '<br/><br/>';
